@@ -1,0 +1,13 @@
+# Définir les variables
+$sourceFile = "\\ServeurX\chemin\vers\le\fichier\source.txt"
+$destinationFile = "\\ServeurY\chemin\vers\le\fichier\destination.txt"
+
+# Copier le fichier
+Copy-Item -Path $sourceFile -Destination $destinationFile -Force
+
+# Vérifier si la copie a réussi
+if (Test-Path $destinationFile) {
+    Write-Output "Le fichier a été copié avec succès de $sourceFile à $destinationFile."
+} else {
+    Write-Output "La copie du fichier a échoué."
+}
